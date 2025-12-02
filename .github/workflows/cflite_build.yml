@@ -7,7 +7,10 @@ permissions: read-all
 jobs:
   Build:
    runs-on: ubuntu-latest
-   steps:
+   env:
+      PROJECT_SRC_PATH: "/github/workspace"
+      BUILD_INTEGRATION_PATH: "."
+    steps:
    - name: Build Fuzzers
      id: build
      uses: google/oss-fuzz/infra/cifuzz/external-actions/build_fuzzers@master
