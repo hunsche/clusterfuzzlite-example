@@ -11,6 +11,12 @@ jobs:
       PROJECT_SRC_PATH: "/github/workspace"
       BUILD_INTEGRATION_PATH: "."
     steps:
+    - name: Debug
+      run: |
+        ls -la
+        cat project.yaml
+        echo "PROJECT_SRC_PATH=$PROJECT_SRC_PATH"
+        echo "BUILD_INTEGRATION_PATH=$BUILD_INTEGRATION_PATH"
     - name: Build Fuzzers
       id: build
       uses: google/clusterfuzzlite/actions/build_fuzzers@v1
